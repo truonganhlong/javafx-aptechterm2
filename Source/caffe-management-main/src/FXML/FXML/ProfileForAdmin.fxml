@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.emojione.EmojiOneView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="1200.0" stylesheets="@../CSS/button.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXML.FXML.ProfileForAdminController">
+   <children>
+      <Pane layoutX="250.0" layoutY="98.0" prefHeight="494.0" prefWidth="592.0">
+         <children>
+            <Text layoutX="35.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UserName" wrappingWidth="97.0">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="35.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discount" wrappingWidth="97.0">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="35.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of birth" wrappingWidth="119.66665649414062">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="36.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passwords" wrappingWidth="97.0">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="36.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fullname" wrappingWidth="97.0">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="36.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="97.0">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="36.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avatar" wrappingWidth="97.0">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font>
+            </Text>
+            <TextField id="txt_email" fx:id="txt_email" layoutX="232.0" layoutY="229.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="23.0" prefWidth="340.0" />
+            <TextField id="txt_avatar" fx:id="txt_avatar" layoutX="232.0" layoutY="319.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="264.0" />
+            <PasswordField id="txt_password" fx:id="txt_password" layoutX="232.0" layoutY="81.0" prefHeight="25.0" prefWidth="340.0" />
+            <ComboBox id="cbb_discount" fx:id="cbb_discount" layoutX="232.0" layoutY="370.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#SelectedDiscount" prefHeight="25.0" prefWidth="340.0" />
+            <Text layoutX="35.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contribute" wrappingWidth="97.0">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font>
+            </Text>
+            <Label id="lb_contribute" fx:id="lbl_contributeValue" alignment="BASELINE_CENTER" layoutX="232.0" layoutY="424.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="340.0" style="-fx-background-color: gray;" />
+            <Text layoutX="36.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone" wrappingWidth="97.0">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font>
+            </Text>
+            <TextField id="txt_phone" fx:id="txt_phone" layoutX="232.0" layoutY="276.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="23.0" prefWidth="340.0" />
+            <Label id="lb_dob" fx:id="lbl_dobValue" alignment="BASELINE_CENTER" contentDisplay="CENTER" layoutX="232.0" layoutY="178.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="340.0" style="-fx-background-color: gray;" />
+            <Label id="lb_fullname" fx:id="lbl_fullnameValue" alignment="BASELINE_CENTER" contentDisplay="CENTER" layoutX="232.0" layoutY="128.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="340.0" style="-fx-background-color: gray;" />
+            <Label id="lb_username" fx:id="lbl_usernameValue" alignment="BASELINE_CENTER" contentDisplay="CENTER" layoutX="232.0" layoutY="34.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="340.0" style="-fx-background-color: gray;" />
+            <Button id="btn_browse" fx:id="btn_browse" layoutX="509.0" layoutY="319.0" mnemonicParsing="false" onAction="#Browse" prefHeight="25.0" prefWidth="63.0" text="Browse..." />
+         </children>
+      </Pane>
+      <Pane layoutX="366.0" layoutY="24.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="500.0">
+         <children>
+            <Text layoutX="79.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Profile">
+               <font>
+                  <Font name="Arial Black" size="36.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="885.0" layoutY="201.0" prefHeight="377.0" prefWidth="256.0" stylesheets="@../CSS/button.css">
+         <children>
+            <Button id="btn_save" fx:id="btn_save" layoutX="86.0" layoutY="328.0" mnemonicParsing="false" onAction="#Save" prefHeight="34.0" prefWidth="86.0" text="Save" />
+            <ImageView fx:id="lbl_image" fitHeight="304.0" fitWidth="243.0" layoutX="8.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Button id="btn_update" fx:id="btn_update" layoutX="482.0" layoutY="586.0" mnemonicParsing="false" onAction="#Update" prefHeight="51.0" prefWidth="97.0" text="Update" />
+      <Button id="btn_back" fx:id="btn_back" layoutX="600.0" layoutY="586.0" mnemonicParsing="false" onAction="#Back" prefHeight="51.0" prefWidth="97.0" text="Back" />
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: rgb(141, 76, 54);">
+         <children>
+            <Button id="btn_singout" fx:id="btn_singout" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutY="626.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Signout" opacity="0.94" prefHeight="39.0" prefWidth="201.0" style="-fx-background-color: rgb(141, 76, 54);" text="Singout" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Book Antiqua Bold" size="16.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Button>
+            <Button id="btn_booking" fx:id="btn_booking" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutY="540.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Booking" opacity="0.94" prefHeight="39.0" prefWidth="201.0" style="-fx-background-color: rgb(141, 76, 54);" text="Booking" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Book Antiqua Bold" size="16.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Button>
+            <Button id="btn_employee" fx:id="btn_employee" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutY="438.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Employee" opacity="0.94" prefHeight="39.0" prefWidth="201.0" style="-fx-background-color: rgb(141, 76, 54);" text="Employee" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Book Antiqua Bold" size="16.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Button>
+            <Button id="btn_menuManager" fx:id="btn_menuManager" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutX="-1.0" layoutY="388.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#MenuManager" opacity="0.94" prefHeight="39.0" prefWidth="201.0" style="-fx-background-color: rgb(141, 76, 54);" text="Menu Manager" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Book Antiqua Bold" size="16.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+               <graphic>
+                  <EmojiOneView fill="WHITE" glyphName="LEDGER" size="25" />
+               </graphic>
+            </Button>
+            <Button id="btn_profile" fx:id="btn_profile" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutX="-1.0" layoutY="335.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Profile" prefHeight="39.0" prefWidth="201.0" style="-fx-background-color: rgb(141, 76, 54);" text="Profile" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Book Antiqua Bold" size="16.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Button>
+            <ImageView fitHeight="202.0" fitWidth="201.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="60.0">
+               <image>
+                  <Image url="@../Icons/coffee-cup.png" />
+               </image>
+<!--               <cursor>
+                  <Cursor fx:constant="NONE" />
+               </cursor>-->
+            </ImageView>
+            <Button id="btn_order" fx:id="btn_order" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutY="492.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Order" opacity="0.94" prefHeight="39.0" prefWidth="201.0" style="-fx-background-color: rgb(141, 76, 54);" text="Order" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Book Antiqua Bold" size="16.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Button>
+            <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="26.0" layoutY="363.0" size="25" />
+            <FontAwesomeIconView fill="WHITE" glyphName="USERS" layoutX="17.0" layoutY="473.0" size="25" />
+            <EmojiOneView fill="WHITE" glyphName="PENCIL" layoutX="22.0" layoutY="527.0" size="25" />
+            <EmojiOneView fill="WHITE" glyphName="CLIPBOARD" layoutX="22.0" layoutY="568.0" size="25" />
+            <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" layoutX="23.0" layoutY="654.0" size="25" />
+            <Button id="btn_profile" fx:id="btn_home" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutX="-1.0" layoutY="285.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Home" prefHeight="39.0" prefWidth="201.0" style="-fx-background-color: rgb(141, 76, 54);" text="Home" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Book Antiqua Bold" size="16.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Button>
+            <FontAwesomeIconView fill="#faf8f8" glyphName="HOME" layoutX="22.0" layoutY="313.0" size="25" text="" wrappingWidth="25.000000000000114" />
+            <Button id="btn_singout" fx:id="btn_data" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutX="-1.0" layoutY="586.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Data" opacity="0.94" prefHeight="39.0" prefWidth="201.0" style="-fx-background-color: rgb(141, 76, 54);" text="Data" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Book Antiqua Bold" size="16.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Button>
+            <FontAwesomeIconView fill="#fcfafa" glyphName="CREDIT_CARD" layoutX="21.0" layoutY="614.0" size="25" />
+         </children>
+         <stylesheets>
+            <URL value="@../CSS/button.css" />
+            <URL value="@../CSS/scene.css" />
+         </stylesheets>
+      </AnchorPane>
+      <Label fx:id="lbl_role" alignment="BASELINE_CENTER" contentDisplay="CENTER" layoutX="893.0" layoutY="131.0" prefHeight="66.0" prefWidth="243.0" style="-fx-background-color: grey;">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

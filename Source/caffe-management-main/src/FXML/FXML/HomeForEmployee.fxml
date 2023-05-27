@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.emojione.EmojiOneView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXML.FXML.HomeForEmployeeController">
+   <children>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="721.0" prefWidth="207.0" style="-fx-background-color: rgb(141, 76, 54);">
+         <children>
+            <Button id="btn_singout" fx:id="btn_singout" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutY="595.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Signout" opacity="0.94" prefHeight="39.0" prefWidth="201.0" style="-fx-background-color: rgb(141, 76, 54);" text="Singout" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Book Antiqua Bold" size="16.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Button>
+            <Button id="btn_booking" fx:id="btn_booking" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Booking" opacity="0.94" prefHeight="39.0" prefWidth="201.0" style="-fx-background-color: rgb(141, 76, 54);" text="Booking" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Book Antiqua Bold" size="16.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Button>
+            <Button id="btn_profile" fx:id="btn_profile" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutX="-1.0" layoutY="335.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Profile" prefHeight="39.0" prefWidth="201.0" style="-fx-background-color: rgb(141, 76, 54);" text="Profile" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Book Antiqua Bold" size="16.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Button>
+            <ImageView fitHeight="202.0" fitWidth="201.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="60.0">
+               <image>
+                  <Image url="@../Icons/coffee-cup.png" />
+               </image>
+            </ImageView>
+            <Button id="btn_order" fx:id="btn_order" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutY="398.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Order" opacity="0.94" prefHeight="39.0" prefWidth="201.0" style="-fx-background-color: rgb(141, 76, 54);" text="Order" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Book Antiqua Bold" size="16.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Button>
+            <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="26.0" layoutY="363.0" size="25" />
+            <EmojiOneView fill="WHITE" glyphName="PENCIL" layoutX="22.0" layoutY="426.0" size="25" />
+            <EmojiOneView fill="WHITE" glyphName="CLIPBOARD" layoutX="22.0" layoutY="494.0" size="25" />
+            <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" layoutX="23.0" layoutY="623.0" size="25" />
+            <Button id="btn_profile" fx:id="btn_home" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutX="5.0" layoutY="282.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Home" prefHeight="39.0" prefWidth="201.0" style="-fx-background-color: rgb(141, 76, 54);" text="Home" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Book Antiqua Bold" size="16.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Button>
+            <EmojiOneView />
+            <FontAwesomeIconView fill="#f4f2f2" glyphName="HOME" layoutX="22.0" layoutY="310.0" size="25" text="" wrappingWidth="25.000000000000114" />
+         </children>
+      </AnchorPane>
+   </children>
+   <stylesheets>
+      <URL value="@../CSS/scene.css" />
+      <URL value="@../CSS/button.css" />
+   </stylesheets>
+</AnchorPane>
