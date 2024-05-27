@@ -264,8 +264,41 @@ public class OrderModel {
             return 0;
         }
     }
+    
+    public List<DataManager> ReadAllOrderData(String begin, String end){
+        try {
+            ProductModel productModel = new ProductModel();
+            UserModel userModel = new UserModel();
+            List<DataManager> list = new ArrayList<>();
+            String sql = "SELECT [Order].product_id, SUM([Order].quantity) AS quantity, SUM([Order].total_price) AS total_price FROM [Order] INNER JOIN [Product] ON [Order].product_id = [Product].id WHERE [Order].created_at BETWEEN ? AND ? AND [Order].status = ? GROUP BY [Order].product_id";
+            con = JDBCConnect.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, begin);
+            ps.setString(2, end);
+            ps.setInt(3, 1);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                DataManager obj = new DataManager();
+                obj.setProduct(productModel.ReadOne(rs.getInt("product_id")).getName());
+                obj.setQuantity(rs.getInt("quantity"));
+                obj.setTotal_price(rs.getFloat("total_price"));                
+                list.add(obj);
+            }
+            return list;
+        } catch (SQLException e) {
+            return null;
+        } finally {
+            try {
+                rs.close();
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+            }
+        }
+    }
     public static void main(String[] args) {
         //IPath path = project.getLocation();
-        
+        OrderModel model = new OrderModel();
+        System.out.println(model.ReadAllOrderData("2022-12-01", "2022-12-16"));
     }
 }

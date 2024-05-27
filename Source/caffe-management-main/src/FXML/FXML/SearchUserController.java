@@ -163,6 +163,8 @@ public class SearchUserController implements Initializable {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Check-out failed!");
             }
+        } else {
+            Close(event);
         }
     }
 

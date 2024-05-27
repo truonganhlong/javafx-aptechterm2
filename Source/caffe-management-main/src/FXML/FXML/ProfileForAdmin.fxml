@@ -2,6 +2,7 @@
 
 <?import de.jensd.fx.glyphs.emojione.EmojiOneView?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -16,84 +17,105 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="1200.0" stylesheets="@../CSS/button.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXML.FXML.ProfileForAdminController">
+<AnchorPane id="paneAll" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXML.FXML.ProfileForAdminController">
    <children>
-      <Pane layoutX="250.0" layoutY="98.0" prefHeight="494.0" prefWidth="592.0">
+      <AnchorPane layoutX="228.0" layoutY="42.0" prefHeight="631.0" prefWidth="943.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 100; -fx-background-radius: 100;">
          <children>
-            <Text layoutX="35.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UserName" wrappingWidth="97.0">
-               <font>
-                  <Font name="Arial Black" size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="35.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discount" wrappingWidth="97.0">
-               <font>
-                  <Font name="Arial Black" size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="35.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of birth" wrappingWidth="119.66665649414062">
-               <font>
-                  <Font name="Arial Black" size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="36.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passwords" wrappingWidth="97.0">
-               <font>
-                  <Font name="Arial Black" size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="36.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fullname" wrappingWidth="97.0">
-               <font>
-                  <Font name="Arial Black" size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="36.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="97.0">
-               <font>
-                  <Font name="Arial Black" size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="36.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avatar" wrappingWidth="97.0">
-               <font>
-                  <Font name="Arial Black" size="16.0" />
-               </font>
-            </Text>
-            <TextField id="txt_email" fx:id="txt_email" layoutX="232.0" layoutY="229.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="23.0" prefWidth="340.0" />
-            <TextField id="txt_avatar" fx:id="txt_avatar" layoutX="232.0" layoutY="319.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="264.0" />
-            <PasswordField id="txt_password" fx:id="txt_password" layoutX="232.0" layoutY="81.0" prefHeight="25.0" prefWidth="340.0" />
-            <ComboBox id="cbb_discount" fx:id="cbb_discount" layoutX="232.0" layoutY="370.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#SelectedDiscount" prefHeight="25.0" prefWidth="340.0" />
-            <Text layoutX="35.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contribute" wrappingWidth="97.0">
-               <font>
-                  <Font name="Arial Black" size="16.0" />
-               </font>
-            </Text>
-            <Label id="lb_contribute" fx:id="lbl_contributeValue" alignment="BASELINE_CENTER" layoutX="232.0" layoutY="424.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="340.0" style="-fx-background-color: gray;" />
-            <Text layoutX="36.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone" wrappingWidth="97.0">
-               <font>
-                  <Font name="Arial Black" size="16.0" />
-               </font>
-            </Text>
-            <TextField id="txt_phone" fx:id="txt_phone" layoutX="232.0" layoutY="276.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="23.0" prefWidth="340.0" />
-            <Label id="lb_dob" fx:id="lbl_dobValue" alignment="BASELINE_CENTER" contentDisplay="CENTER" layoutX="232.0" layoutY="178.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="340.0" style="-fx-background-color: gray;" />
-            <Label id="lb_fullname" fx:id="lbl_fullnameValue" alignment="BASELINE_CENTER" contentDisplay="CENTER" layoutX="232.0" layoutY="128.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="340.0" style="-fx-background-color: gray;" />
-            <Label id="lb_username" fx:id="lbl_usernameValue" alignment="BASELINE_CENTER" contentDisplay="CENTER" layoutX="232.0" layoutY="34.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="340.0" style="-fx-background-color: gray;" />
-            <Button id="btn_browse" fx:id="btn_browse" layoutX="509.0" layoutY="319.0" mnemonicParsing="false" onAction="#Browse" prefHeight="25.0" prefWidth="63.0" text="Browse..." />
+            <Pane layoutX="26.0" layoutY="75.0" prefHeight="554.0" prefWidth="592.0">
+               <children>
+                  <Text layoutX="35.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="97.0">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="35.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discount" wrappingWidth="97.0">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="35.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of birth" wrappingWidth="119.66665649414062">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="36.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passwords" wrappingWidth="97.0">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="36.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fullname" wrappingWidth="97.0">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="36.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="97.0">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="36.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avatar" wrappingWidth="97.0">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <TextField id="txt_email" fx:id="txt_email" alignment="BASELINE_CENTER" layoutX="232.0" layoutY="229.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="23.0" prefWidth="340.0" style="-fx-border-color: black; -fx-border-radius: 25; -fx-background-radius: 25;" />
+                  <TextField id="txt_avatar" fx:id="txt_avatar" layoutX="232.0" layoutY="319.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="299.0" style="-fx-border-color: black; -fx-border-radius: 25; -fx-background-radius: 25;" />
+                  <PasswordField id="txt_password" fx:id="txt_password" alignment="BASELINE_CENTER" layoutX="232.0" layoutY="81.0" prefHeight="25.0" prefWidth="340.0" style="-fx-border-color: black; -fx-border-radius: 25; -fx-background-radius: 25;" />
+                  <ComboBox id="cbb_discount" fx:id="cbb_discount" layoutX="232.0" layoutY="370.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#SelectedDiscount" prefHeight="25.0" prefWidth="340.0" style="-fx-border-color: black; -fx-border-radius: 25; -fx-background-color: white; -fx-background-radius: 25;" />
+                  <Text layoutX="35.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contribute" wrappingWidth="97.0">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Label id="lb_contribute" fx:id="lbl_contributeValue" alignment="BASELINE_CENTER" layoutX="232.0" layoutY="424.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="340.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 25; -fx-background-radius: 25;" />
+                  <Text layoutX="36.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone" wrappingWidth="97.0">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <TextField id="txt_phone" fx:id="txt_phone" alignment="BASELINE_CENTER" layoutX="232.0" layoutY="276.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="23.0" prefWidth="340.0" style="-fx-border-color: black; -fx-border-radius: 25; -fx-background-radius: 25;" />
+                  <Label id="lb_dob" fx:id="lbl_dobValue" alignment="BASELINE_CENTER" contentDisplay="CENTER" layoutX="232.0" layoutY="178.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="340.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 25; -fx-background-radius: 25;" />
+                  <Label id="lb_fullname" fx:id="lbl_fullnameValue" alignment="BASELINE_CENTER" contentDisplay="CENTER" layoutX="232.0" layoutY="128.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="340.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 25; -fx-background-radius: 25;" />
+                  <Label id="lb_username" fx:id="lbl_usernameValue" alignment="BASELINE_CENTER" contentDisplay="CENTER" layoutX="232.0" layoutY="34.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="340.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 25; -fx-background-radius: 25;" />
+                  <Button id="btn_browse" fx:id="btn_browse" layoutX="539.0" layoutY="319.0" mnemonicParsing="false" onAction="#Browse" prefHeight="25.0" prefWidth="33.0" style="-fx-border-radius: 25;">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SEARCH" size="20.0" />
+                     </graphic></Button>
+                  <Button id="btn_update" fx:id="btn_update" layoutX="232.0" layoutY="488.0" mnemonicParsing="false" onAction="#Update" prefHeight="51.0" prefWidth="136.0" style="-fx-background-color: #e2f866; -fx-border-color: black; -fx-background-radius: 25; -fx-border-radius: 25;" text="Update">
+                     <graphic>
+                        <MaterialDesignIconView glyphName="UPDATE" size="25.0" />
+                     </graphic></Button>
+                  <Button id="btn_back" fx:id="btn_back" layoutX="436.0" layoutY="488.0" mnemonicParsing="false" onAction="#Back" prefHeight="51.0" prefWidth="136.0" style="-fx-background-radius: 25; -fx-border-color: black; -fx-border-radius: 25;" text="Back">
+                     <graphic>
+                        <EmojiOneView glyphName="BACK" size="25" />
+                     </graphic></Button>
+               </children>
+            </Pane>
+            <Pane layoutX="139.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="500.0">
+               <children>
+                  <Text layoutX="188.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Profile">
+                     <font>
+                        <Font name="Arial Black" size="36.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="648.0" layoutY="106.0" prefHeight="452.0" prefWidth="256.0" style="-fx-border-color: black; -fx-border-radius: 25;" stylesheets="@../CSS/button.css">
+               <children>
+                  <Button id="btn_save" fx:id="btn_save" layoutX="87.0" layoutY="404.0" mnemonicParsing="false" onAction="#Save" prefHeight="34.0" prefWidth="86.0" text="Save">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SAVE" size="20.0" />
+                     </graphic></Button>
+                  <Label fx:id="lbl_role" alignment="BASELINE_CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="25.0" prefHeight="66.0" prefWidth="243.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="lbl_image" fitHeight="269.0" fitWidth="243.0" layoutX="9.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
          </children>
-      </Pane>
-      <Pane layoutX="366.0" layoutY="24.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="500.0">
-         <children>
-            <Text layoutX="79.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Profile">
-               <font>
-                  <Font name="Arial Black" size="36.0" />
-               </font>
-            </Text>
-         </children>
-      </Pane>
-      <Pane layoutX="885.0" layoutY="201.0" prefHeight="377.0" prefWidth="256.0" stylesheets="@../CSS/button.css">
-         <children>
-            <Button id="btn_save" fx:id="btn_save" layoutX="86.0" layoutY="328.0" mnemonicParsing="false" onAction="#Save" prefHeight="34.0" prefWidth="86.0" text="Save" />
-            <ImageView fx:id="lbl_image" fitHeight="304.0" fitWidth="243.0" layoutX="8.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-         </children>
-      </Pane>
-      <Button id="btn_update" fx:id="btn_update" layoutX="482.0" layoutY="586.0" mnemonicParsing="false" onAction="#Update" prefHeight="51.0" prefWidth="97.0" text="Update" />
-      <Button id="btn_back" fx:id="btn_back" layoutX="600.0" layoutY="586.0" mnemonicParsing="false" onAction="#Back" prefHeight="51.0" prefWidth="97.0" text="Back" />
+      </AnchorPane>
       <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: rgb(141, 76, 54);">
          <children>
             <Button id="btn_singout" fx:id="btn_singout" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutY="626.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Signout" opacity="0.94" prefHeight="39.0" prefWidth="201.0" style="-fx-background-color: rgb(141, 76, 54);" text="Singout" textAlignment="CENTER" textFill="WHITE">
@@ -131,7 +153,7 @@
                   <EmojiOneView fill="WHITE" glyphName="LEDGER" size="25" />
                </graphic>
             </Button>
-            <Button id="btn_profile" fx:id="btn_profile" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutX="-1.0" layoutY="335.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Profile" prefHeight="39.0" prefWidth="201.0" style="-fx-background-color: rgb(141, 76, 54);" text="Profile" textAlignment="CENTER" textFill="WHITE">
+            <Button id="btn_profile" fx:id="btn_profile" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutX="-1.0" layoutY="335.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Profile" prefHeight="39.0" prefWidth="202.0" styleClass="active" stylesheets="@../CSS/button.css" text="Profile" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Book Antiqua Bold" size="16.0" />
                </font>
@@ -184,10 +206,9 @@
             <URL value="@../CSS/scene.css" />
          </stylesheets>
       </AnchorPane>
-      <Label fx:id="lbl_role" alignment="BASELINE_CENTER" contentDisplay="CENTER" layoutX="893.0" layoutY="131.0" prefHeight="66.0" prefWidth="243.0" style="-fx-background-color: grey;">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font>
-      </Label>
    </children>
+   <stylesheets>
+      <URL value="@../CSS/button.css" />
+      <URL value="@../CSS/test.css" />
+   </stylesheets>
 </AnchorPane>

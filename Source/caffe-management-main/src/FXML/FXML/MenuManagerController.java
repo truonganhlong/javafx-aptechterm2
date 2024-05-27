@@ -38,6 +38,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -254,7 +255,7 @@ public class MenuManagerController implements Initializable {
 
     @FXML
     private void Save(ActionEvent event) {
-        int reply = JOptionPane.showConfirmDialog(null, "Are you sure to save this image ?", "Save", JOptionPane.YES_NO_OPTION);
+        int reply = JOptionPane.showConfirmDialog(null, "Are you sure to save this image?", "Save", JOptionPane.YES_NO_OPTION);
         if (reply == JOptionPane.YES_OPTION) {
             try {
                 ImageModel model = new ImageModel();
@@ -496,18 +497,15 @@ public class MenuManagerController implements Initializable {
 
     @FXML
     private void GetItem(MouseEvent event) {        
-        selectedId = table_product.getSelectionModel().getSelectedIndex();
-        //System.out.println(selectedId);
+        selectedId = table_product.getSelectionModel().getSelectedIndex();        
         txt_name.setText(nameCol.getCellData(selectedId).toString());
         txt_price.setText(priceCol.getCellData(selectedId).toString());
         txt_quantity.setText(quantityCol.getCellData(selectedId).toString());
+        lbl_statusValue.setText(statusCol.getCellData(selectedId).toString());
         selectedId = Integer.parseInt(idCol.getCellData(selectedId).toString());
         showCategoryData(selectedId);
-        showUnitData(selectedId);
-        //System.out.println(statusCol.getCellData(selectedId).toString());
-        lbl_statusValue.setText(statusCol.getCellData(selectedId).toString());
-        showImage(selectedId);
-        //System.out.println(selectedId);
+        showUnitData(selectedId);             
+        showImage(selectedId);        
     }
 
     private void showImage(int id) {
@@ -532,5 +530,19 @@ public class MenuManagerController implements Initializable {
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
+    }
+
+    @FXML
+    private void checkQuantity(KeyEvent event) {
+        if(event.getCharacter().matches("[^\\e\t\r\\d+$]")){
+            event.consume();
+        }
+    }
+
+    @FXML
+    private void checkPage(KeyEvent event) {
+        if(event.getCharacter().matches("[^\\e\t\r\\d+$]")){
+            event.consume();
+        }
     }
 }

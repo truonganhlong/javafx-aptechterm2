@@ -55,7 +55,7 @@
             <EmojiOneView fill="WHITE" glyphName="PENCIL" layoutX="22.0" layoutY="426.0" size="25" />
             <EmojiOneView fill="WHITE" glyphName="CLIPBOARD" layoutX="22.0" layoutY="494.0" size="25" />
             <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" layoutX="23.0" layoutY="623.0" size="25" />
-            <Button id="btn_profile" fx:id="btn_home" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutX="5.0" layoutY="282.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Home" prefHeight="39.0" prefWidth="201.0" style="-fx-background-color: rgb(141, 76, 54);" text="Home" textAlignment="CENTER" textFill="WHITE">
+            <Button id="btn_profile" fx:id="btn_home" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutY="282.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Home" prefHeight="39.0" prefWidth="207.0" styleClass="active" stylesheets="@../CSS/button.css" text="Home" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Book Antiqua Bold" size="16.0" />
                </font>

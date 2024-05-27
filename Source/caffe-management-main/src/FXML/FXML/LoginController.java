@@ -50,6 +50,7 @@ public class LoginController implements Initializable {
         
     }
     
+    @FXML
     public void Login(ActionEvent event) throws IOException{
         UserModel model = new UserModel();
         if (model.Login(txt_username.getText()) == null) {

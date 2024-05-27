@@ -25,6 +25,7 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -81,6 +82,18 @@ public class DataController implements Initializable {
     private DatePicker txt_begin;
     @FXML
     private DatePicker txt_end;
+    @FXML
+    private Label lbl_total;
+    private float total = 0;
+    @FXML
+    private TableView<DAL.Entity.DataManager> table_totalOrder;
+    @FXML
+    private TableColumn<DAL.Entity.DataManager, String> totalProductCol;
+    @FXML
+    private TableColumn<DAL.Entity.DataManager, Integer> totalQuantityCol;
+    @FXML
+    private TableColumn<DAL.Entity.DataManager, Float> totalTotalPriceCol;
+    ObservableList<DAL.Entity.DataManager> allList = FXCollections.observableArrayList();
 
     /**
      * Initializes the controller class.
@@ -197,21 +210,28 @@ public class DataController implements Initializable {
 
     @FXML
     private void Search(ActionEvent event) {
+        total = 0;
         OrderModel model = new OrderModel();
         LocalDate begin = txt_begin.getValue();
-        String beginDate = begin.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        System.out.println(beginDate);
+        String beginDate = begin.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));        
         LocalDate end = txt_end.getValue();
-        String endDate = end.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        System.out.println(endDate);
-        list.addAll(model.ReadOrderData(beginDate, endDate));
-        System.out.println(list);
+        String endDate = end.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));        
+        list.addAll(model.ReadOrderData(beginDate, endDate));        
         table_order.setItems(list);
         productCol.setCellValueFactory(new PropertyValueFactory<>("product"));
         quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         totalPriceCol.setCellValueFactory(new PropertyValueFactory<>("total_price"));
         timeCol.setCellValueFactory(new PropertyValueFactory<>("time"));
         orderByCol.setCellValueFactory(new PropertyValueFactory<>("orderBy"));
+        for(int i = 0; i < list.size(); i++){
+            total += list.get(i).getTotal_price();
+        }
+        lbl_total.setText(String.valueOf(total));
+        allList.addAll(model.ReadAllOrderData(beginDate, endDate));
+        table_totalOrder.setItems(allList);
+        totalProductCol.setCellValueFactory(new PropertyValueFactory<>("product"));
+        totalQuantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        totalTotalPriceCol.setCellValueFactory(new PropertyValueFactory<>("total_price"));
     }
 
     @FXML
@@ -233,6 +253,7 @@ public class DataController implements Initializable {
 
     public void Begin(String username) {
         this.username = username;        
+        lbl_total.setText(String.valueOf(total));
     }
     
 }

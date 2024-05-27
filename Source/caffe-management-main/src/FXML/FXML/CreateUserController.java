@@ -78,6 +78,8 @@ public class CreateUserController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    @FXML
+    private Button btn_data;
 
     /**
      * Initializes the controller class.
@@ -236,5 +238,9 @@ public class CreateUserController implements Initializable {
     @FXML
     private void SelectedRole(ActionEvent event) {
         selectedRole = cbb_role.getSelectionModel().getSelectedItem();
+    }
+
+    @FXML
+    private void Data(ActionEvent event) {
     }
 }

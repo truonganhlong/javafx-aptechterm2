@@ -2,6 +2,7 @@
 
 <?import de.jensd.fx.glyphs.emojione.EmojiOneView?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -20,7 +21,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXML.FXML.MenuManagerController">
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="710.0" prefWidth="1200.0" stylesheets="@../CSS/test.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXML.FXML.MenuManagerController">
    <children>
       <Pane layoutX="395.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="410.0">
          <children>
@@ -33,63 +34,75 @@
       </Pane>
       <AnchorPane layoutX="209.0" layoutY="106.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="590.0" prefWidth="655.0">
          <children>
-            <AnchorPane prefHeight="242.0" prefWidth="655.0">
+            <AnchorPane prefHeight="262.0" prefWidth="655.0" style="-fx-border-color: black;">
                <children>
                   <Label layoutX="32.0" layoutY="32.0" text="Name">
                      <font>
-                        <Font name="Arial" size="13.0" />
+                        <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <TextField id="txt_name" fx:id="txt_name" layoutX="92.0" layoutY="28.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="170.0" />
+                  <TextField id="txt_name" fx:id="txt_name" layoutX="92.0" layoutY="28.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="170.0" style="-fx-border-color: black;" />
                   <Label layoutX="32.0" layoutY="70.0" text="Price">
                      <font>
-                        <Font name="Arial" size="13.0" />
+                        <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <TextField id="txt_price" fx:id="txt_price" layoutX="92.0" layoutY="66.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="170.0" />
+                  <TextField id="txt_price" fx:id="txt_price" layoutX="92.0" layoutY="66.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="170.0" style="-fx-border-color: black;" />
                   <Label layoutX="32.0" layoutY="109.0" text="Quantity">
                      <font>
-                        <Font name="Arial" size="13.0" />
+                        <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <TextField id="txt_quantity" fx:id="txt_quantity" layoutX="92.0" layoutY="105.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="170.0" />
+                  <TextField id="txt_quantity" fx:id="txt_quantity" layoutX="92.0" layoutY="105.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onKeyTyped="#checkQuantity" prefHeight="25.0" prefWidth="170.0" style="-fx-border-color: black;" />
                   <Label layoutX="385.0" layoutY="32.0" text="Category">
                      <font>
-                        <Font name="Arial" size="13.0" />
+                        <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <ComboBox id="cbb_category" fx:id="cbb_category" layoutX="459.0" layoutY="28.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#SelectedCategory" prefWidth="150.0" />
+                  <ComboBox id="cbb_category" fx:id="cbb_category" layoutX="459.0" layoutY="28.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#SelectedCategory" prefWidth="150.0" style="-fx-border-color: black;" />
                   <Label layoutX="385.0" layoutY="70.0" text="Unit">
                      <font>
-                        <Font name="Arial" size="13.0" />
+                        <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <ComboBox id="cbb_unit" fx:id="cbb_unit" layoutX="459.0" layoutY="66.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#SelectedUnit" prefWidth="150.0" />
+                  <ComboBox id="cbb_unit" fx:id="cbb_unit" layoutX="459.0" layoutY="66.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#SelectedUnit" prefWidth="150.0" style="-fx-border-color: black;" />
                   <Label layoutX="310.0" layoutY="156.0" text="Search for">
                      <font>
                         <Font name="Arial" size="13.0" />
                      </font>
                   </Label>
-                  <ComboBox id="cbb_status" fx:id="cbb_status" layoutX="382.0" layoutY="151.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#SelectedStatus" prefHeight="26.0" prefWidth="170.0" />
+                  <ComboBox id="cbb_status" fx:id="cbb_status" layoutX="382.0" layoutY="151.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#SelectedStatus" prefHeight="27.0" prefWidth="178.0" style="-fx-border-color: black;" />
                   <Label layoutX="385.0" layoutY="110.0" text="Status">
                      <font>
-                        <Font name="Arial" size="13.0" />
+                        <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label id="lbl_statusValue" fx:id="lbl_statusValue" layoutX="459.0" layoutY="106.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: gray;">
+                  <Label id="lbl_statusValue" fx:id="lbl_statusValue" layoutX="459.0" layoutY="106.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;">
                      <font>
                         <Font name="Arial" size="13.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btn_filter" layoutX="557.0" layoutY="151.0" mnemonicParsing="false" onAction="#Filter" prefHeight="26.0" prefWidth="53.0" text="Filter" />
-                  <Button id="btn_create" fx:id="btn_create" layoutX="21.0" layoutY="188.0" mnemonicParsing="false" onAction="#Create" prefHeight="34.0" prefWidth="86.0" text="Create" />
-                  <Button id="btn_update" fx:id="btn_update" layoutX="124.0" layoutY="188.0" mnemonicParsing="false" onAction="#Update" prefHeight="34.0" prefWidth="86.0" text="Update" />
-                  <Button id="btn_updateStatus" fx:id="btn_updateStatus" layoutX="226.0" layoutY="188.0" mnemonicParsing="false" onAction="#UpdateStatus" prefHeight="34.0" prefWidth="86.0" text="On/Off" />
+                  <Button fx:id="btn_filter" layoutX="571.0" layoutY="151.0" mnemonicParsing="false" onAction="#Filter" prefHeight="28.0" prefWidth="40.0">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="FILTER" size="20.0" />
+                     </graphic></Button>
+                  <Button id="btn_create" fx:id="btn_create" layoutX="24.0" layoutY="196.0" mnemonicParsing="false" onAction="#Create" prefHeight="35.0" prefWidth="136.0" style="-fx-background-color: #a2f876; -fx-border-color: black; -fx-border-radius: 25; -fx-background-radius: 25;" text="Create">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="PLUS_SQUARE_ALT" size="25.0" />
+                     </graphic></Button>
+                  <Button id="btn_update" fx:id="btn_update" layoutX="177.0" layoutY="196.0" mnemonicParsing="false" onAction="#Update" prefHeight="35.0" prefWidth="136.0" style="-fx-background-color: #e2f866; -fx-border-color: black; -fx-background-radius: 25; -fx-border-radius: 25;" text="Update">
+                     <graphic>
+                        <MaterialIconView glyphName="UPDATE" size="25.0" />
+                     </graphic></Button>
+                  <Button id="btn_updateStatus" fx:id="btn_updateStatus" layoutX="330.0" layoutY="196.0" mnemonicParsing="false" onAction="#UpdateStatus" prefHeight="34.0" prefWidth="136.0" style="-fx-background-color: #eb3840; -fx-border-color: black; -fx-background-radius: 25; -fx-border-radius: 25;" text="On/Off">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="TOGGLE_OFF" size="25.0" />
+                     </graphic></Button>
                </children>
             </AnchorPane>
-            <AnchorPane layoutY="242.0" prefHeight="347.0" prefWidth="655.0">
+            <AnchorPane layoutY="258.0" prefHeight="338.0" prefWidth="655.0">
                <children>
-                  <TextField id="txt_pageIndex" fx:id="txt_pageIndex" layoutX="310.0" layoutY="294.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="16.0" prefWidth="35.0" />
+                  <TextField id="txt_pageIndex" fx:id="txt_pageIndex" layoutX="310.0" layoutY="294.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onKeyTyped="#checkPage" prefHeight="16.0" prefWidth="35.0" />
                   <Button id="btn_backpage" fx:id="btn_backpage" contentDisplay="GRAPHIC_ONLY" layoutX="276.0" layoutY="294.0" mnemonicParsing="false" onAction="#BackPage" text="Button">
                      <graphic>
                         <FontAwesomeIconView glyphName="ANGLE_DOUBLE_LEFT" size="15" />
@@ -100,8 +113,8 @@
                         <FontAwesomeIconView glyphName="ANGLE_DOUBLE_RIGHT" size="15" />
                      </graphic>
                   </Button>
-                  <Button id="btn_searchpage" fx:id="btn_searchpage" layoutX="310.0" layoutY="328.0" mnemonicParsing="false" onAction="#SearchIndex" prefHeight="16.0" prefWidth="37.0" text="Go" />
-                  <TableView fx:id="table_product" onMouseClicked="#GetItem" prefHeight="282.0" prefWidth="655.0">
+                  <Button id="btn_searchpage" fx:id="btn_searchpage" layoutX="310.0" layoutY="328.0" mnemonicParsing="false" onAction="#SearchIndex" prefHeight="16.0" prefWidth="37.0" text="..." />
+                  <TableView fx:id="table_product" layoutY="20.0" onMouseClicked="#GetItem" prefHeight="262.0" prefWidth="655.0" stylesheets="@../CSS/tableView.css">
                     <columns>
                       <TableColumn fx:id="idCol" prefWidth="44.666656494140625" text="ID" />
                       <TableColumn fx:id="nameCol" prefWidth="154.4000244140625" text="Name" />
@@ -118,11 +131,17 @@
       </AnchorPane>
       <AnchorPane layoutX="869.0" layoutY="105.0" prefHeight="577.0" prefWidth="325.0">
          <children>
-            <AnchorPane prefHeight="369.0" prefWidth="325.0">
+            <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="369.0" prefWidth="325.0">
                <children>
                   <TextField id="txt_image" fx:id="txt_image" layoutX="54.0" layoutY="260.0" prefHeight="33.0" prefWidth="233.0" />
-                  <Button id="btn_browse" fx:id="btn_browse" layoutX="84.0" layoutY="318.0" mnemonicParsing="false" onAction="#Browse" prefHeight="34.0" prefWidth="76.0" text="Browse..." />
-                  <Button id="btn_save" fx:id="btn_save" layoutX="188.0" layoutY="318.0" mnemonicParsing="false" onAction="#Save" prefHeight="33.0" prefWidth="76.0" text="Save" />
+                  <Button id="btn_browse" fx:id="btn_browse" layoutX="54.0" layoutY="318.0" mnemonicParsing="false" onAction="#Browse" prefHeight="34.0" prefWidth="98.0">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SEARCH" size="25" />
+                     </graphic></Button>
+                  <Button id="btn_save" fx:id="btn_save" layoutX="188.0" layoutY="318.0" mnemonicParsing="false" onAction="#Save" prefHeight="34.0" prefWidth="97.0" text="Save">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SAVE" size="25.0" />
+                     </graphic></Button>
                   <ImageView fx:id="lbl_image" fitHeight="235.0" fitWidth="213.0" layoutX="74.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
@@ -138,19 +157,22 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button id="btn_category" fx:id="btn_category" mnemonicParsing="false" onAction="#Category" prefHeight="75.0" prefWidth="122.0" text="Category" />
-                        <Button id="btn_addQuantity" fx:id="btn_addQuantity" layoutX="10.0" layoutY="11.0" mnemonicParsing="false" onAction="#AddQuantity" prefHeight="75.0" prefWidth="122.0" text="Add Quantity" GridPane.columnIndex="1" />
-                        <Button id="btn_unit" fx:id="btn_unit" layoutX="10.0" layoutY="11.0" mnemonicParsing="false" onAction="#Unit" prefHeight="75.0" prefWidth="122.0" text="Unit" GridPane.rowIndex="1" />
-                        <Button id="btn_back" fx:id="btn_back" layoutX="10.0" layoutY="11.0" mnemonicParsing="false" onAction="#Back" prefHeight="75.0" prefWidth="122.0" text="Back" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Button id="btn_category" fx:id="btn_category" mnemonicParsing="false" onAction="#Category" prefHeight="75.0" prefWidth="122.0" style="-fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10;" text="Category" />
+                        <Button id="btn_addQuantity" fx:id="btn_addQuantity" layoutX="10.0" layoutY="11.0" mnemonicParsing="false" onAction="#AddQuantity" prefHeight="75.0" prefWidth="122.0" style="-fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10;" text="Add Quantity" GridPane.columnIndex="1" />
+                        <Button id="btn_unit" fx:id="btn_unit" layoutX="10.0" layoutY="11.0" mnemonicParsing="false" onAction="#Unit" prefHeight="75.0" prefWidth="122.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" text="Unit" GridPane.rowIndex="1" />
+                        <Button id="btn_back" fx:id="btn_back" layoutX="10.0" layoutY="11.0" mnemonicParsing="false" onAction="#Back" prefHeight="75.0" prefWidth="122.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" text="Back" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
-      <TextField id="txt_search" fx:id="txt_search" layoutX="215.0" layoutY="52.0" prefHeight="39.0" prefWidth="508.0" />
-      <Button id="btn_search" fx:id="btn_search" layoutX="739.0" layoutY="59.0" mnemonicParsing="false" onAction="#Search" prefHeight="26.0" prefWidth="76.0" text="Search" />
-      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: rgb(141, 76, 54);">
+      <TextField id="txt_search" fx:id="txt_search" layoutX="215.0" layoutY="52.0" prefHeight="39.0" prefWidth="538.0" style="-fx-border-color: black; -fx-border-radius: 25; -fx-background-radius: 25;" />
+      <Button id="btn_search" fx:id="btn_search" layoutX="766.0" layoutY="54.0" mnemonicParsing="false" onAction="#Search" prefHeight="28.0" prefWidth="49.0" style="-fx-background-radius: 100; -fx-border-radius: 100;">
+         <graphic>
+            <FontAwesomeIconView glyphName="SEARCH" size="27" text="" wrappingWidth="23.214284896850586" />
+         </graphic></Button>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="718.0" prefWidth="203.0" style="-fx-background-color: rgb(141, 76, 54);">
          <children>
             <Button id="btn_singout" fx:id="btn_singout" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutX="1.0" layoutY="640.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#Signout" opacity="0.94" prefHeight="39.0" prefWidth="201.0" style="-fx-background-color: rgb(141, 76, 54);" text="Singout" textAlignment="CENTER" textFill="WHITE">
                <font>
@@ -176,7 +198,7 @@
                   <Insets top="10.0" />
                </padding>
             </Button>
-            <Button id="btn_menuManager" fx:id="btn_menuManager" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutX="-1.0" layoutY="388.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#MenuManager" opacity="0.94" prefHeight="39.0" prefWidth="201.0" style="-fx-background-color: rgb(141, 76, 54);" text="Menu Manager" textAlignment="CENTER" textFill="WHITE">
+            <Button id="btn_menuManager" fx:id="btn_menuManager" alignment="BASELINE_CENTER" graphicTextGap="25.0" layoutX="-1.0" layoutY="388.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#MenuManager" opacity="0.94" prefHeight="39.0" prefWidth="203.0" styleClass="active" stylesheets="@../CSS/button.css" text="Menu Manager" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Book Antiqua Bold" size="16.0" />
                </font>

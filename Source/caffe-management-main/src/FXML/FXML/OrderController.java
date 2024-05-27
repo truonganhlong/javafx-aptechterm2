@@ -33,7 +33,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
@@ -135,6 +137,8 @@ public class OrderController implements Initializable {
 
     ObservableList<DAL.Entity.MenuManager> list1 = FXCollections.observableArrayList();
     ObservableList<DAL.Entity.OrderManager> list2 = FXCollections.observableArrayList();
+    @FXML
+    private AnchorPane screen;
 
     /**
      * Initializes the controller class.
@@ -161,7 +165,7 @@ public class OrderController implements Initializable {
         lbl_priceValue1.setText(priceCol.getCellData(selectedId).toString());
         lbl_quantityDisplay.setText(quantityCol.getCellData(selectedId).toString());
         lbl_categoryDisplay.setText(categoryCol.getCellData(selectedId).toString());
-        selectedId = Integer.parseInt(idCol.getCellData(selectedId).toString());
+        selectedId = Integer.parseInt(idCol.getCellData(selectedId).toString());        
         showImage(selectedId);
     }
 
@@ -183,18 +187,22 @@ public class OrderController implements Initializable {
 
     @FXML
     private void AddOrder(ActionEvent event) {
-        OrderModel orderModel = new OrderModel();
-        list2.clear();
-        listOrder.add(orderModel.AddToList(lbl_nameValue1.getText(), Float.parseFloat(lbl_priceValue1.getText()), Integer.parseInt(txt_quantity.getText()), txt_note.getText()));
-        totalPrice += Float.parseFloat(lbl_priceValue1.getText()) * Integer.parseInt(txt_quantity.getText());
-        list2.addAll(listOrder);
-        table_order.setItems(list2);
-        nameOrderCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-        priceOrderCol.setCellValueFactory(new PropertyValueFactory<>("price"));
-        quantityOrderCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        totalOrderCol.setCellValueFactory(new PropertyValueFactory<>("total"));
-        noteOrderCol.setCellValueFactory(new PropertyValueFactory<>("note"));
-        lbl_totalPrice.setText(String.valueOf(totalPrice));
+        if (statusCol.getCellData(selectedId -1) == "inactive") {
+            JOptionPane.showMessageDialog(null, "This product is inactive, active it to order!");
+        } else {
+            OrderModel orderModel = new OrderModel();
+            list2.clear();
+            listOrder.add(orderModel.AddToList(lbl_nameValue1.getText(), Float.parseFloat(lbl_priceValue1.getText()), Integer.parseInt(txt_quantity.getText()), txt_note.getText()));
+            totalPrice += Float.parseFloat(lbl_priceValue1.getText()) * Integer.parseInt(txt_quantity.getText());
+            list2.addAll(listOrder);
+            table_order.setItems(list2);
+            nameOrderCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+            priceOrderCol.setCellValueFactory(new PropertyValueFactory<>("price"));
+            quantityOrderCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+            totalOrderCol.setCellValueFactory(new PropertyValueFactory<>("total"));
+            noteOrderCol.setCellValueFactory(new PropertyValueFactory<>("note"));
+            lbl_totalPrice.setText(String.valueOf(totalPrice));
+        }
     }
 
     @FXML
@@ -224,6 +232,7 @@ public class OrderController implements Initializable {
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
+            Close(event);
         }
     }
 
@@ -236,19 +245,19 @@ public class OrderController implements Initializable {
             root = loader.load();
             SearchUserController ctrl = loader.getController();
             System.out.println(listOrderTable);
-            if(listOrderTable != null){
+            if (listOrderTable != null) {
                 listOrder.addAll(listOrderTable);
-            }         
-            System.out.println(listOrder);
+            }
             ctrl.Begin(username, totalPrice, listOrder);
-            if(tableId != null){
+            if (tableId != null) {
                 ctrl.TableId(tableId);
-            }            
+            }
             stage = new Stage();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
+            Close(event);
         }
     }
 
@@ -348,5 +357,24 @@ public class OrderController implements Initializable {
 
     public void TableId(Integer selectedTable) {
         this.tableId = selectedTable;
+    }
+    
+    private void Close(ActionEvent ev) {
+        Stage stage = (Stage) screen.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    private void checkPage(KeyEvent event) {
+        if(event.getCharacter().matches("[^\\e\t\r\\d+$]")){
+            event.consume();
+        }
+    }
+
+    @FXML
+    private void checkQuantity(KeyEvent event) {
+        if(event.getCharacter().matches("[^\\e\t\r\\d+$]")){
+            event.consume();
+        }
     }
 }

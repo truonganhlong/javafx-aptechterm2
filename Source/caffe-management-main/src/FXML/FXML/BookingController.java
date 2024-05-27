@@ -20,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
@@ -82,6 +83,14 @@ public class BookingController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    @FXML
+    private AnchorPane screen;
+    @FXML
+    private Label lbl_free;
+    @FXML
+    private Label lbl_ordered;
+    @FXML
+    private Label lbl_currentlyUse;
 
     /**
      * Initializes the controller class.
@@ -89,13 +98,177 @@ public class BookingController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        lbl_free.getStyleClass().add("label_free");
+        lbl_ordered.getStyleClass().add("label_ordered");
+        lbl_currentlyUse.getStyleClass().add("label_currentlyUse");
+        TableModel model = new TableModel();
+        //table1
+        if(model.convertStatus(1).equals("Free")){
+            btn_table1.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(1).equals("Ordered")){
+            btn_table1.getStyleClass().add("button_primary");
+        } else {
+            btn_table1.getStyleClass().add("button_success");
+        }
+        //table2
+        if(model.convertStatus(2).equals("Free")){
+            btn_table2.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(2).equals("Ordered")){
+            btn_table2.getStyleClass().add("button_primary");
+        } else {
+            btn_table2.getStyleClass().add("button_success");
+        }
+        //table3
+        if(model.convertStatus(3).equals("Free")){
+            btn_table3.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(3).equals("Ordered")){
+            btn_table3.getStyleClass().add("button_primary");
+        } else {
+            btn_table3.getStyleClass().add("button_success");
+        }
+        //table4
+        if(model.convertStatus(4).equals("Free")){
+            btn_table4.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(4).equals("Ordered")){
+            btn_table4.getStyleClass().add("button_primary");
+        } else {
+            btn_table4.getStyleClass().add("button_success");
+        }
+        //table5
+        if(model.convertStatus(5).equals("Free")){
+            btn_table5.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(5).equals("Ordered")){
+            btn_table5.getStyleClass().add("button_primary");
+        } else {
+            btn_table5.getStyleClass().add("button_success");
+        }
+        //table6
+        if(model.convertStatus(6).equals("Free")){
+            btn_table6.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(6).equals("Ordered")){
+            btn_table6.getStyleClass().add("button_primary");
+        } else {
+            btn_table6.getStyleClass().add("button_success");
+        }
+        //table7
+        if(model.convertStatus(7).equals("Free")){
+            btn_table7.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(7).equals("Ordered")){
+            btn_table7.getStyleClass().add("button_primary");
+        } else {
+            btn_table7.getStyleClass().add("button_success");
+        }
+        //table8
+        if(model.convertStatus(8).equals("Free")){
+            btn_table8.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(8).equals("Ordered")){
+            btn_table8.getStyleClass().add("button_primary");
+        } else {
+            btn_table8.getStyleClass().add("button_success");
+        }
+        //table9
+        if(model.convertStatus(9).equals("Free")){
+            btn_table9.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(9).equals("Ordered")){
+            btn_table9.getStyleClass().add("button_primary");
+        } else {
+            btn_table9.getStyleClass().add("button_success");
+        }
+        //table10
+        if(model.convertStatus(10).equals("Free")){
+            btn_table10.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(10).equals("Ordered")){
+            btn_table10.getStyleClass().add("button_primary");
+        } else {
+            btn_table10.getStyleClass().add("button_success");
+        }
+        //table11
+        if(model.convertStatus(11).equals("Free")){
+            btn_table11.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(11).equals("Ordered")){
+            btn_table11.getStyleClass().add("button_primary");
+        } else {
+            btn_table11.getStyleClass().add("button_success");
+        }
+        //table12
+        if(model.convertStatus(12).equals("Free")){
+            btn_table12.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(12).equals("Ordered")){
+            btn_table12.getStyleClass().add("button_primary");
+        } else {
+            btn_table12.getStyleClass().add("button_success");
+        }
+        //table13
+        if(model.convertStatus(13).equals("Free")){
+            btn_table13.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(13).equals("Ordered")){
+            btn_table13.getStyleClass().add("button_primary");
+        } else {
+            btn_table13.getStyleClass().add("button_success");
+        }
+        //table14
+        if(model.convertStatus(14).equals("Free")){
+            btn_table14.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(14).equals("Ordered")){
+            btn_table14.getStyleClass().add("button_primary");
+        } else {
+            btn_table14.getStyleClass().add("button_success");
+        }
+        //table15
+        if(model.convertStatus(15).equals("Free")){
+            btn_table15.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(15).equals("Ordered")){
+            btn_table15.getStyleClass().add("button_primary");
+        } else {
+            btn_table15.getStyleClass().add("button_success");
+        }
+        //table16
+        if(model.convertStatus(16).equals("Free")){
+            btn_table16.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(16).equals("Ordered")){
+            btn_table16.getStyleClass().add("button_primary");
+        } else {
+            btn_table16.getStyleClass().add("button_success");
+        }
+        //table17
+        if(model.convertStatus(17).equals("Free")){
+            btn_table17.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(17).equals("Ordered")){
+            btn_table17.getStyleClass().add("button_primary");
+        } else {
+            btn_table17.getStyleClass().add("button_success");
+        }
+        //table18
+        if(model.convertStatus(18).equals("Free")){
+            btn_table18.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(18).equals("Ordered")){
+            btn_table18.getStyleClass().add("button_primary");
+        } else {
+            btn_table18.getStyleClass().add("button_success");
+        }
+        //table19
+        if(model.convertStatus(19).equals("Free")){
+            btn_table19.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(19).equals("Ordered")){
+            btn_table19.getStyleClass().add("button_primary");
+        } else {
+            btn_table19.getStyleClass().add("button_success");
+        }
+        //table20
+        if(model.convertStatus(20).equals("Free")){
+            btn_table20.getStyleClass().add("button_deffault");
+        } else if(model.convertStatus(20).equals("Ordered")){
+            btn_table20.getStyleClass().add("button_primary");
+        } else {
+            btn_table20.getStyleClass().add("button_success");
+        }
     }
 
     @FXML
     private void Table10(ActionEvent event) {
         TableModel model = new TableModel();
         lbl_status.setText(model.convertStatus(10));
-        selectedTable = 10;
+        selectedTable = 10;        
     }
 
     @FXML
@@ -237,7 +410,7 @@ public class BookingController implements Initializable {
         OrderModel orderModel = new OrderModel();
         if (lbl_status.getText().equals("Free")) {
             model.UpdateStatusForOrder(selectedTable);
-            lbl_status.setText(model.convertStatus(selectedTable));
+            lbl_status.setText(model.convertStatus(selectedTable));            
         } else if(lbl_status.getText().equals("Ordered")){
             model.UpdateStatusForUsing(selectedTable);            
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Order.fxml"));
@@ -250,6 +423,7 @@ public class BookingController implements Initializable {
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
+            Close(event);
         } else {            
             System.out.println(orderModel.ConvertOrderManager(orderModel.ReadOrderToPay(selectedTable)));
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Order.fxml"));
@@ -261,6 +435,7 @@ public class BookingController implements Initializable {
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
+            Close(event);
         }
     }
 
@@ -282,8 +457,10 @@ public class BookingController implements Initializable {
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
+            Close(event);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Check-out failed!");
+            Close(event);
         }
     }
 
@@ -291,4 +468,8 @@ public class BookingController implements Initializable {
         this.username = username;
     }
 
+    private void Close(ActionEvent ev) {
+        Stage stage = (Stage) screen.getScene().getWindow();
+        stage.close();
+    }
 }
